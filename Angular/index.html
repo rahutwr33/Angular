@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+   <meta charset="utf-8"/>
+ <link rel="stylesheet" href="./css/form.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+  <script src="./lib/angular.min.js"></script>
+  <script src="./lib/angular-ui-router.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+  <script src="./script.js"></script>
+   <script src="./controller/login.js"></script>
+   <script src="./controller/register.js"></script>
+</head>
+
+
+<body>
+ <div class="container-fluid"  ui-view="header"></div>
+  <div class="container">
+        <div ui-view="content"></div>
+        <div ui-view="footer"></div>
+    </div>
+ 
+  
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+   <div>
+     <fieldset>
+   <legend>Register</legend>
+    <form name="form"  role="form">
+        <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
+            <label for="username">First name</label>
+            <input type="text" name="firstName" id="firstName" class="form-control" ng-model="user.firstName" required />
+            <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">First name is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
+            <label for="username">Last name</label>
+            <input type="text" name="lastName" id="Text1" class="form-control" ng-model="user.lastName" required />
+            <span ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Last name is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" class="form-control" ng-model="user.email" required />
+            <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password">Password:</label>
+       <input type="password" class="form-control" placeholder="Enter Password"  id="password" name="password" ng-model="user.password" ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required  />
+   <span ng-show="form.password.$error.required && form.password.$dirty">required</span>
+   <span ng-show="!form.password.$error.required && (form.password.$error.minlength || form.password.$error.maxlength) && form.password.$dirty">Passwords must be between 8 and 20 characters.</span>
+   <span ng-show="!form.password.$error.required && !form.password.$error.minlength && !form.password.$error.maxlength && form.password.$error.pattern && form.password.$dirty">Must contain one lower &amp; uppercase letter and one alpha character.</span>
+       
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-error': form.confirm.$dirty && form.confirm.$error.required }">
+            <label for="confirm">Confirm Password</label>
+            <input type="password" name="confirm"  placeholder="Confirm Password" id="confirm" class="form-control" ng-model="user.confirm"  ng-model="user.password" ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required />
+            <span ng-show="form.confirm.$error.required && form.confirm.$dirty">required</span>
+   <span ng-show="!form.confirm.$error.required && (form.confirm.$error.minlength || form.confirm.$error.maxlength) && form.confirm.$dirty"> Confirm Passwords must be between 8 and 20 characters.</span>
+   <span ng-show="!form.confirm.$error.required && !form.confirm.$error.minlength && !form.confirm.$error.maxlength && form.confirm.$error.pattern && form.confirm.$dirty">Must contain one lower &amp; uppercase letter and one alpha character.</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-success" ng-click="register(user)">Register</button>
+           
+            <a href="#home" class="btn btn-success">Cancel</a>
+        </div>
+    </form>
+     </fieldset>
+</div>
